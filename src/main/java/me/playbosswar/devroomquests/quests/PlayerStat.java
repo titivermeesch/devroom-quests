@@ -1,19 +1,40 @@
 package me.playbosswar.devroomquests.quests;
 
-import org.bukkit.entity.Player;
+import org.bson.codecs.pojo.annotations.BsonId;
+import org.bson.codecs.pojo.annotations.BsonProperty;
+import org.bson.types.ObjectId;
+
+import java.util.UUID;
 
 public class PlayerStat {
-    private final Player player;
-    private final EventType eventType;
+    @BsonId
+    private ObjectId id;
+    @BsonProperty("playerUuid")
+    private UUID playerUuid;
+    @BsonProperty("eventType")
+    private EventType eventType;
+    @BsonProperty("amount")
     private int amount = 0;
 
-    public PlayerStat(Player player, EventType eventType) {
-        this.player = player;
+    // Required for POJO conversion
+    public PlayerStat() {
+    }
+
+    public PlayerStat(UUID playerUuid, EventType eventType) {
+        this.playerUuid = playerUuid;
         this.eventType = eventType;
     }
 
-    public Player getPlayer() {
-        return player;
+    public ObjectId getId() {
+        return id;
+    }
+
+    public void setId(ObjectId id) {
+        this.id = id;
+    }
+
+    public UUID getPlayerUuid() {
+        return playerUuid;
     }
 
     public EventType getEventType() {
@@ -26,5 +47,13 @@ public class PlayerStat {
 
     public void setAmount(int amount) {
         this.amount = amount;
+    }
+
+    public void setPlayerUuid(UUID playerUuid) {
+        this.playerUuid = playerUuid;
+    }
+
+    public void setEventType(EventType eventType) {
+        this.eventType = eventType;
     }
 }

@@ -1,1 +1,5 @@
-mongo: 'mongodb+srv://tristan:medionakoya@cluster0.ahugy.mongodb.net?w=majority'
+debug: false
+mongo: 'mongodb+srv://tristan:medionakoya@cluster0.ahugy.mongodb.net'
+database: 'devroom_quests'
+collection: 'player_stats'
+quests:

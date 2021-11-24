@@ -17,5 +17,32 @@ placed 200 blocks)
 
 ## Installation
 
-The plugin does not require any external dependencies. You only need to provide the plugin with a valid Mongo URL (you
-can use the default one for testing)
+1. Add your Mongo link or use the default one provided
+2. Create a database called `devroom_quests`. If your Mongo client requires a default collection, you can call
+   it `player_stats`.
+3. Reload/restart your server
+
+## Configuration
+
+Here is an example of the configuration file
+
+```yaml
+quests:
+  - quest_1:
+      type: "BREAK"
+      threshold: 5
+      commands:
+        - say YOU DID IT! You received 40 coins
+        - eco give %player_name% 40
+```
+
+## Possible improvements
+
+These are improvements that could be done if the requirements of the plugin changes:
+
+- Multi collection support (only 1 is possible now because the plugin does not require more collections)
+
+## Debugging
+
+The plugin comes with a logger that can be enabled in the config.yml file. This will provide you with a set of logs
+triggered at different places to understand if the issues comes from a configuration issue or from the plugin itself
