@@ -15,6 +15,11 @@ Each quest need to have one of the following types:
 A quest is a combination of a type, a threshold and a set of commands (e.g. Execute command x and command y when user
 placed 200 blocks)
 
+## Building
+
+To build a jar file, simply run the `shadowJar` Gradle task. It will spit out a jar file under build/libs including all
+the necessary libraries
+
 ## Installation
 
 1. Add your Mongo link or use the default one provided
