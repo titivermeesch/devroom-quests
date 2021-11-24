@@ -18,9 +18,7 @@ placed 200 blocks)
 ## Installation
 
 1. Add your Mongo link or use the default one provided
-2. Create a database called `devroom_quests`. If your Mongo client requires a default collection, you can call
-   it `player_stats`.
-3. Reload/restart your server
+2. Reload/restart your server
 
 ## Configuration
 
